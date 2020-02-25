@@ -1,0 +1,14 @@
+---
+
+- hosts: any
+  remote_user:
+  root   tasks:
+
+  - name: Install git
+    become: true
+    apt:
+      name: "{{item}}"
+      state: latest
+    with_items:
+    - wget
+    - git
