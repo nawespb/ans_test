@@ -1,0 +1,27 @@
+---
+
+- name: install transport-https
+  apt: name=apt-transport-https state=latest
+
+- name: Del Nginx-common
+  apt: name=nginx-common state=absent
+
+- name: Update APT package cache
+  apt: update_cache=yes cache_valid_time=600
+
+- name: Upgrade APT to the latest packages
+  apt: upgrade=dist
+  register: apt_result
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+
+- name: Install Nginx on Debian
+  apt: name=nginx update_cache=yes state=latest
+
+- name: Start Nginx and Enable it on the every boot
+  service: name=nginx state=started enabled=yes
+
+- name: Install PHP-FPM on Debian
+  apt: name=php-fpm update_cache=yes state=latest

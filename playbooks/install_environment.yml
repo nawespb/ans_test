@@ -1,0 +1,21 @@
+---
+
+- hosts: srv2
+  name: Install Environment
+  tasks:
+
+    - include: git.yml
+      tags: 
+      - git
+   
+    - include: install_docker.yml
+      tags:
+      - docker
+
+    - include: install_nginx_phpfpm.yml
+      tags:
+      - nginx
+
+    - include: install_standard_distrib.yml
+      tags:
+      - base

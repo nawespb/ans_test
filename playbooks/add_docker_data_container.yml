@@ -1,0 +1,14 @@
+- name: Create a test container
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Install pip
+    apt: name=python-pip state=present
+  - name: install docker-py package
+    pip: name=docker-py
+  - name: Create a hello-world container
+    docker_container:
+      name: hw
+      image: hello-world
+      state: present

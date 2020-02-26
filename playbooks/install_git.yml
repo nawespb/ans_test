@@ -1,0 +1,12 @@
+---
+
+- name: Install git
+  become: true
+  apt:
+    name: "{{item}}"
+    update_cache: yes
+    state: latest
+  with_items:
+  - wget
+  - git
+  - zip
