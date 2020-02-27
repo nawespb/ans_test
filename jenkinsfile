@@ -8,8 +8,7 @@ node {
             installation: 'ansible', 
             inventory: 'hosts', 
             playbook: 'install_environment.yml', 
-            tags: 'git',
-            sudoUser: jenkins
+            tags: 'git'
 
         }
     
