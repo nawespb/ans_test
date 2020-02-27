@@ -1,4 +1,4 @@
-node(){
+node {
 
     try {
      
@@ -13,6 +13,12 @@ node(){
 
         }
     
+    } 
+    
+    catch(ex) {
+                    
+        error("Stage Ansible GIT failure!");
+                    
     }
 
 }
