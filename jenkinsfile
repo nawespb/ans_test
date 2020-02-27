@@ -9,7 +9,7 @@ node {
             inventory: 'hosts', 
             playbook: 'install_environment.yml', 
             tags: 'git',
-            sudoUser: null
+            sudoUser: jenkins
 
         }
     
