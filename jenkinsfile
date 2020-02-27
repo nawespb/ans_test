@@ -8,7 +8,7 @@ node {
             installation: 'ansible', 
             inventory: 'hosts', 
             playbook: 'install_environment.yml', 
-            credentialsId: 'srv2', 
+            credentialsId: 'srv_id', 
             disableHostKeyChecking: true, 
             tags: 'git'
 
