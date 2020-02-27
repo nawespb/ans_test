@@ -9,6 +9,7 @@ node {
             inventory: 'hosts', 
             playbook: 'install_environment.yml', 
             credentialsId: 'srv2', 
+            disableHostKeyChecking: true, 
             tags: 'git'
 
         }
