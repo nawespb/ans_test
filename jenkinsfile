@@ -4,7 +4,6 @@ node {
      
         stage ('Ansible') {
             
-            credentialsId: 'srv_id',
             ansiblePlaybook colorized: true, 
             installation: 'ansible', 
             inventory: 'hosts', 
