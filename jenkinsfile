@@ -8,7 +8,7 @@ wrap([$class: 'TimestamperBuildWrapper']){
      
             stage ('Ansible') {
             
-                credentialsId: 'srv_id',
+                credentialsId: 'srv2',
                 ansiblePlaybook colorized: true, 
                 installation: 'ansible', 
                 inventory: 'hosts', 
