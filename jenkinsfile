@@ -1,10 +1,6 @@
 node {
 
-wrap([$class: 'TimestamperBuildWrapper']){
-
-    wrap([$class: 'AnsiColorBuildWrapper']){
-
-        try {
+try {
      
             stage ('Ansible') {
             
@@ -24,6 +20,5 @@ wrap([$class: 'TimestamperBuildWrapper']){
             error("Stage Ansible GIT failure!");
                     
             }
-        }
-    }
+
 }
