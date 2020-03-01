@@ -8,8 +8,7 @@ try {
                 installation: 'ansible', 
                 inventory: 'hosts', 
                 playbook: 'install_environment.yml',
-                credentialsId: 'srv2', 
-                tags: 'git'
+                credentialsId: 'srv2'
 
             }
   
