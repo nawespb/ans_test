@@ -1,25 +1,29 @@
 node {
 
-    try {
+wrap([$class: 'TimestamperBuildWrapper']){
+
+    wrap([$class: 'AnsiColorBuildWrapper']){
+
+        try {
      
-        stage ('Ansible') {
+            stage ('Ansible') {
             
-            ansiblePlaybook colorized: true, 
-            installation: 'ansible', 
-            inventory: 'hosts', 
-            playbook: 'install_environment.yml', 
-            credentialsId: 'srv2', 
-            disableHostKeyChecking: true, 
-            tags: 'git'
+                credentialsId: 'srv_id',
+                ansiblePlaybook colorized: true, 
+                installation: 'ansible', 
+                inventory: 'hosts', 
+                playbook: 'install_environment.yml', 
+                tags: 'git'
 
+            }
+  
+        } 
+    
+        catch(ex) {
+                    
+            error("Stage Ansible GIT failure!");
+                    
+            }
         }
-    
-    } 
-    
-    catch(ex) {
-                    
-        error("Stage Ansible GIT failure!");
-                    
     }
-
 }

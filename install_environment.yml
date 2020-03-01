@@ -1,8 +1,7 @@
 ---
 
-- hosts: srv2
+- hosts: all
   name: Install Environment
-  remote_user: root
   tasks:
 
     - include: install_git.yml
