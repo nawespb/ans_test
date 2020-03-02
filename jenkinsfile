@@ -1,24 +1,26 @@
 node {
 
-try {
+    try {
      
-            stage ('Ansible') {
+                stage ('Ansible') {
             
-                ansiblePlaybook colorized: true, 
-                installation: 'ansible', 
-                inventory: 'hosts', 
-                playbook: 'install_environment.yml',
-                credentialsId: 'srv2',
-                tags: 'git'
+                    ansiblePlaybook colorized: true, 
+                    installation: 'ansible', 
+                    inventory: 'hosts', 
+                    playbook: 'install_environment.yml',
+                    credentialsId: 'srv2',
+                    tags: 'git'
 
-            }
+                }
   
-        } 
+            } 
     
-        catch(ex) {
+    catch(ex) {
                     
             error("Stage Ansible GIT failure!");
                     
             }
+
+    deleteDir();
 
 }
